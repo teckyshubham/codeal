@@ -86,11 +86,15 @@ module.exports.createSession = function(req, res) {
 //            return res.redirect('back');
 //        }}
 //    )
+
+    req.flash('success','Logged in Succesfully');
     return res.redirect('/');
 };
 module.exports.destroySession = function(req, res){
     req.logout(function(err) {
         if (err) { return next(err); }
+        req.flash('success','Logged OUT Succesfully');
         res.redirect('/');
       });
+      
 }
