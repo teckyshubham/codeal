@@ -8,7 +8,7 @@
 
     <form action="/users/update/<%= profile_user.id %>" enctype="multipart/form-data" method="post">
         <input type="text" name="name" placeholder="Your name" id="" value="<%= profile_user.name %>" required>
-        <input type="email" name="emai" placeholder="Your Email" id="" value="<%= profile_user.email %>" required>
+        <input type="email" name="email" placeholder="Your Email" id="" value="<%= profile_user.email %>" required>
         <input type="file" name="avatar" class="form-control-file" name="profile_photo _uload">
         <input type="submit" value="Update">
     </form>
