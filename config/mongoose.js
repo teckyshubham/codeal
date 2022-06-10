@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 // connect to the database
-mongoose.connect('mongodb://localhost/codeal_devlopment');
+mongoose.connect(process.env.db_url ||'mongodb://localhost/codeal_devlopment');
 
 // aquire the connection (to check if it is successful)
 const db = mongoose.connection;

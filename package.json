@@ -3,6 +3,10 @@
     "version": "1.0.0",
     "description": "my first app",
     "main": "index.js",
+    "engines": {
+        "node": "16.14.0",
+    "npm":"8.8.0"
+    },
     "scripts": {
         "start": "nodemon index.js",
         "test": "echo \"Error: no test specified\" && exit 1"
