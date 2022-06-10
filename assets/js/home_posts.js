@@ -8,8 +8,8 @@ let createPost =function(){
             url:'/posts/create',
             data: newPostForm.serialize(),
             success: function(data){
-                let newPost =newPostForm(data.data.post);
-                $('posts-list-container>ul').prepend(newPost);
+                let newPost =newPostDom(data.data.post,data.data.user);
+                $('#posts-list-container>ul').prepend(newPost);
                 deletePost($(' .delete-post-button',newPost));
 
 
@@ -35,7 +35,7 @@ let createPost =function(){
 }
 
 // method to create a post in DOM
-let newPostDom = function(post){
+let newPostDom = function(post,user){
     return $(`<li id="post-${post._id}">
                 <p>
                     
@@ -46,7 +46,7 @@ let newPostDom = function(post){
                     ${ post.content }
                     <br>
                     <small>
-                    ${ post.user.name }
+                    ${ user.name }
                     </small>
                 </p>
                 <div class="post-comments">
